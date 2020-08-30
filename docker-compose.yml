@@ -1,0 +1,22 @@
+version: '3'
+services:
+  odoo-update:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fabiocdo/docker-odoo:12.0
+    network_mode: host
+    command: autoupdate
+    volumes:
+      - ~/.ssh:/home/temp/.ssh
+      - ~/custom_addons:/opt/dados/addons/12.0
+    environment:
+      PG_USER: odoo
+      PG_PASSWORD: odoo
+      ODOO_VERSION: 12.0
+      ODOO_ENTERPRISE: 0
+      PORT: 8090
+      DATABASE: odoo
+      DISABLE_LOGFILE: 1
+      TIME_CPU: 600
+      TIME_REAL: 720
