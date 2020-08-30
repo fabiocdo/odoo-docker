@@ -1,6 +1,5 @@
 # odoo-docker
-## Repositório adaptado. 
-### Créditos de [Trustcode Sistemas Empresariais](https://github.com/Trust-Code)
+### Repositório adaptado de [Trustcode Sistemas Empresariais](https://github.com/Trust-Code)
 
 How do use this docker image ?
 ---------------------
