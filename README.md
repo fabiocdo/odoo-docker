@@ -7,27 +7,27 @@ How do use this docker image ?
 Minimal command to run this image
 
 ```bash
-▶ docker run --name odoo --net host -d -e PG_USER=odoo -e PG_PASSWORD=odoo fabiocdo/odoo-docker:12.0
+$ docker run --name odoo --net host -d -e PG_USER=odoo -e PG_PASSWORD=odoo fabiocdo/odoo-docker:12.0
 ```
 
-Other parameters:
+Environtment variables (you must type -e flag before):
 
-* PG_HOST=localhost
-* PG_PORT=5432
-* PG_USER=odoo
-* PG_PASSWORD=odoo
-* PORT=8069
-* LONGPOLLING_PORT=8072
-* WORKERS=3
-* ODOO_PASSWORD=senha_admin
-* DISABLE_LOGFILE=0
-* ODOO_ENTERPRISE=0
-* ODOO_VERSION=12.0
+- PG_HOST=localhost
+- PG_PORT=5432
+- PG_USER=odoo
+- PG_PASSWORD=odoo
+- PORT=8069
+- LONGPOLLING_PORT=8072
+- WORKERS=3
+- ODOO_PASSWORD=senha_admin
+- DISABLE_LOGFILE=0
+- ODOO_ENTERPRISE=0
+- ODOO_VERSION=12.0
 
 Example: Switching the port on which Odoo will listen to:
 
 ```bash
-▶ docker run --name odoo --net host -d -e PG_USER=odoo -e PG_PASSWORD=odoo -e PORT=8050 fabiocdo/docker_odoo:12.0
+$ docker run --name odoo --net host -d -e PG_USER=odoo -e PG_PASSWORD=odoo -e PORT=<YOUR PORT> fabiocdo/docker_odoo:12.0
 ```
 
 Preferred way:
@@ -55,7 +55,6 @@ services:
       TIME_CPU: 600
       TIME_REAL: 720
 ```
-
 Parameters:
 
 - ODOO_ENTERPRISE - download the enterprise version (it needs a valid ssh key to be mounted under /home/temp/.ssh)
@@ -66,7 +65,7 @@ Parameters:
 
 Change the parameters as you want and run:
 ```bash
-▶ docker-compose up
+$ docker-compose up
 ```
 
 Updating the Odoo instance
@@ -88,5 +87,5 @@ Using for development and testing:
 
 Download this repository, change the environment variables in docker-compose.yml and run:
 ```bash
-▶ docker-compose build && docker-compose up
+$ docker-compose build && docker-compose up
 ```
