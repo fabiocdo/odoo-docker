@@ -1,10 +1,10 @@
 # odoo-docker
-### Repositório adaptado de [Trustcode Sistemas Empresariais](https://github.com/Trust-Code)
+#### Repositório adaptado de [Trustcode Sistemas Empresariais](https://github.com/Trust-Code)
 
 How do use this docker image ?
 ---------------------
 
-tldr; Minimal command to run this image
+Minimal command to run this image
 
 ```bash
 ▶ docker run --name odoo --net host -d -e PG_USER=odoo -e PG_PASSWORD=odoo fabiocdo/odoo-docker:12.0
