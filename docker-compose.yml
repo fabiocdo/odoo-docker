@@ -5,8 +5,8 @@ services:
       context: .
       dockerfile: Dockerfile
     image: fabiocdo/docker-odoo:12.0
-    network_mode: host
     command: autoupdate
+    network_mode: host    
     volumes:
       - ~/.ssh:/home/temp/.ssh
       - ~/custom_addons:/opt/dados/addons/12.0
