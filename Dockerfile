@@ -9,6 +9,7 @@ RUN wget https://github.com/Trust-Code/odoo-brasil/archive/12.0.zip -O odoo-bras
     wget https://github.com/Trust-Code/odoo/archive/12.0.zip -O odoo.zip && \
     wget https://github.com/Trust-Code/trustcode-addons/archive/12.0.zip -O trustcode-addons.zip && \
     wget https://github.com/oca/web/archive/12.0.zip -O web.zip && \
+    wget https://github.com/OCA/server-tools/tree/12.0/module_auto_update -O auto-update.zip && \
     wget https://github.com/oca/server-ux/archive/12.0.zip -O server-ux.zip && \
     wget https://github.com/oca/reporting-engine/archive/12.0.zip -O reporting-engine.zip && \
     wget https://github.com/oca/account-financial-reporting/archive/12.0.zip -O account-financial-reporting.zip && \
@@ -18,6 +19,7 @@ RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-12.0 odoo-b
     unzip -q odoo.zip && rm odoo.zip && mv odoo-12.0 odoo && \
     unzip -q trustcode-addons.zip && rm trustcode-addons.zip && mv trustcode-addons-12.0 trustcode-addons && \
     unzip -q web.zip && rm web.zip && mv web-12.0 web && \
+    unzip -q auto-update.zip && rm auto-update.zip && mv auto-update-12.0 auto-update && \ 
     unzip -q server-ux.zip && rm server-ux.zip && mv server-ux-12.0 server-ux && \
     unzip -q reporting-engine.zip && rm reporting-engine.zip && mv reporting-engine-12.0 reporting-engine && \
     unzip -q account-financial-reporting.zip && rm account-financial-reporting.zip && mv account-financial-reporting-12.0 account-financial-reporting && \
@@ -35,9 +37,7 @@ RUN chown -R odoo:odoo /opt && \
     chown -R odoo:odoo /etc/odoo/odoo.conf
 
 RUN mkdir /opt/.ssh && \
-    chown -R odoo:odoo /opt/.ssh \
-    mkdir /opt/odoo && \
-    chown -R odoo:odoo /opt/odoo
+    chown -R odoo:odoo /opt/.ssh
 
 ADD bin/autoupdate /opt/odoo
 ADD bin/entrypoint.sh /opt/odoo
