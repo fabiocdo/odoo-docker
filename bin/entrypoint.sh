@@ -54,12 +54,11 @@ if [ -f /opt/.ssh/id_rsa ]; then
   ssh-keyscan github.com >> ~/.ssh/known_hosts
   ssh-keyscan bitbucket.org >> ~/.ssh/known_hosts
 
-  if [ $ODOO_ENTERPRISE == 1 ]; then
-   if [ ! -d enterprise ]; then
-     git clone --single-branch -v -b $ODOO_VERSION git@github.com:odoo/enterprise.git
-   fi
-  fi
-
+#  if [ $ODOO_ENTERPRISE == 1 ]; then
+#   if [ ! -d enterprise ]; then
+#     git clone --single-branch -v -b $ODOO_VERSION git@github.com:odoo/enterprise.git
+#   fi
+#  fi
 fi
 
 # Monta o addons_path
